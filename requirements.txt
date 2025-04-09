@@ -1,0 +1,5 @@
+boto3
+pandas
+psycopg2-binary
+python-dotenv
+dbt-postgres==1.5.9
