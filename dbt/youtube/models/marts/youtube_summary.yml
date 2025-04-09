@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: youtube_summary
+    description: "Aggregated summary by category and country"
+    columns:
+      - name: category
+        tests: [not_null]
+      - name: total_creators
+        tests: [not_null]

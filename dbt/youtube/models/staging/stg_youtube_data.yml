@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_youtube_data
+    description: "Standardized and cleaned raw YouTube data"
+    columns:
+      - name: youtuber
+        tests: [not_null]
+      - name: subscribers
+        tests: [not_null]
+      - name: video_views
+        tests: [not_null]
