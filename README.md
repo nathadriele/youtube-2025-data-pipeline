@@ -68,4 +68,52 @@ The DAG below orchestrates the full flow:
 
    - Views per Subscriber
 
-## Dashboard 
+## Dashboard
+
+Includes:
+
+- Total Views
+
+- Engagement Score
+
+- Top Performing Categories
+
+- Subscriber Growth
+
+- Views Distribution
+
+## Airflow DAG
+
+### DAG:
+
+- upload_to_s3: pushes CSV to AWS S3
+
+- ingest_from_s3: reads from S3 and writes to PostgreSQL
+
+- - run_dbt_models: transforms raw data into analytics models
+
+run_dbt_tests: ensures constraints and integrity
+
+### DAG configuration:
+
+- Scheduled daily
+
+ Retries + failure handling
+
+- Defined task dependencies
+
+## Key Metrics Extracted
+
+▶️ Top Categories
+
+
+
+🌏 Views by Country
+
+
+
+📉 Engagement Analysis
+
+
+
+📈 Views per Subscriber
