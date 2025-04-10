@@ -13,5 +13,20 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  metabase:
+    image: metabase/metabase
+    container_name: metabase
+    ports:
+      - "3000:3000"
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: youtube
+      MB_DB_PORT: 5432
+      MB_DB_USER: postgres
+      MB_DB_PASS: your_password
+      MB_DB_HOST: db
+    depends_on:
+      - db
+
 volumes:
   postgres_data:
