@@ -81,11 +81,11 @@ Includes:
 
 ## Key Metrics Extracted
 
-![image](https://github.com/user-attachments/assets/025e05c9-9460-47f3-98e4-e4e6fcb48d58)
+![image](https://github.com/user-attachments/assets/9c121cb4-5946-4253-adcf-11302eb1b682)
 
 ### Top Categories
 
-![top_categories](https://github.com/user-attachments/assets/e5e57e85-003a-44ba-89eb-e49aec998bba)
+![image](https://github.com/user-attachments/assets/bc057502-db37-46b1-a542-9fbbe4cc98f7)
 
 ### Views by Country
 
@@ -93,11 +93,11 @@ Includes:
 
 ### Engagement vs. Views
 
-![image](https://github.com/user-attachments/assets/770b89aa-0d4a-4f46-89d3-2031c2a4c89a)
+![image](https://github.com/user-attachments/assets/05b93b0b-8af7-4391-b7bd-a86e2093f9b7)
 
 ### Views per Subscriber
 
-![image](https://github.com/user-attachments/assets/b0d92936-304f-495f-a241-656387a97e7c)
+![image](https://github.com/user-attachments/assets/2ea4707f-63d0-4fc7-b50c-ccd2fccc0d2d)
 
 ## Tests & Validation
 
