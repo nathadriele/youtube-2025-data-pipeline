@@ -81,7 +81,7 @@ Includes:
 
 ## Key Metrics Extracted
 
-![image](https://github.com/user-attachments/assets/9c121cb4-5946-4253-adcf-11302eb1b682)
+![Uploading metabase.png…]()
 
 ### 📈 Top Categories
 
