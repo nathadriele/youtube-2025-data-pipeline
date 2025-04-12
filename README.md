@@ -1,7 +1,5 @@
 # YouTube 2025 Data Pipeline
 
-![metabase](https://github.com/user-attachments/assets/b71ef370-2277-4e1a-9a9c-7db183785bc1)
-
 A modular, and scalable end-to-end Data Engineering project that ingests video performance data from the YouTube 2025 Dataset, stores it in AWS S3 and PostgreSQL, transforms the data using dbt, orchestrates all steps with Apache Airflow, and provides dynamic visualizations with Metabase.
 
 This project was structured following best practices of modern Data Engineering, enabling reproducibility, observability, modularity, and ease of future integration with cloud services.
@@ -82,6 +80,8 @@ Includes:
 - Defined task dependencies
 
 ## Key Metrics Extracted
+
+![image](https://github.com/user-attachments/assets/025e05c9-9460-47f3-98e4-e4e6fcb48d58)
 
 ### Top Categories
 
