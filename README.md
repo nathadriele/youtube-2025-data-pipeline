@@ -97,7 +97,7 @@ Includes:
 
 ### Views per Subscriber
 
-![image](https://github.com/user-attachments/assets/658bfa02-08fe-41dd-8581-2ab6d97c477c)
+![image](https://github.com/user-attachments/assets/b0d92936-304f-495f-a241-656387a97e7c)
 
 ## Tests & Validation
 
