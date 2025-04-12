@@ -81,15 +81,15 @@ Includes:
 
 ## Key Metrics Extracted
 
-![Uploading metabase.png…]()
+![metabase](https://github.com/user-attachments/assets/a466e13b-561b-40d8-8e8c-5e2f7a45574a)
 
 ### 📈 Top Categories
 
-![image](https://github.com/user-attachments/assets/bc057502-db37-46b1-a542-9fbbe4cc98f7)
+![image](https://github.com/user-attachments/assets/8c35b152-42e0-41f2-ae81-4ee040ba81cc)
 
 ### 📈 Views by Country
 
-![views_by_country](https://github.com/user-attachments/assets/0b32397e-d95d-46fc-b136-b49460c7d0c9)
+![image](https://github.com/user-attachments/assets/bc057502-db37-46b1-a542-9fbbe4cc98f7)
 
 ### 📈 Engagement vs. Views
 
