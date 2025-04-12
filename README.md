@@ -83,19 +83,19 @@ Includes:
 
 ![image](https://github.com/user-attachments/assets/9c121cb4-5946-4253-adcf-11302eb1b682)
 
-### Top Categories
+### 📈 Top Categories
 
 ![image](https://github.com/user-attachments/assets/bc057502-db37-46b1-a542-9fbbe4cc98f7)
 
-### Views by Country
+### 📈 Views by Country
 
 ![views_by_country](https://github.com/user-attachments/assets/0b32397e-d95d-46fc-b136-b49460c7d0c9)
 
-### Engagement vs. Views
+### 📈 Engagement vs. Views
 
 ![image](https://github.com/user-attachments/assets/05b93b0b-8af7-4391-b7bd-a86e2093f9b7)
 
-### Views per Subscriber
+### 📈 Views per Subscriber
 
 ![image](https://github.com/user-attachments/assets/2ea4707f-63d0-4fc7-b50c-ccd2fccc0d2d)
 
