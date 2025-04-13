@@ -4,6 +4,8 @@ A modular, and scalable end-to-end Data Engineering project that ingests video p
 
 This project was structured following best practices of modern Data Engineering, enabling reproducibility, observability, modularity, and ease of future integration with cloud services.
 
+![Captura de tela 2025-04-13 171618](https://github.com/user-attachments/assets/72dfbb65-f0a4-42a9-8c61-42367703a700)
+
 ## Objective
 
 To build a professional-grade ETL pipeline that:
