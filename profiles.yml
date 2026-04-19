@@ -3,10 +3,10 @@ youtube:
   outputs:
     dev:
       type: postgres
-      host: localhost
-      user: postgres
-      password: yourpassword
-      port: 5432
-      dbname: "youtube"
+      host: "{{ env_var('DB_HOST', 'localhost') }}"
+      user: "{{ env_var('DB_USER', 'postgres') }}"
+      password: "{{ env_var('DB_PASSWORD') }}"
+      port: "{{ env_var('DB_PORT', '5432') | as_number }}"
+      dbname: "{{ env_var('DB_NAME', 'youtube') }}"
       schema: public
       threads: 4

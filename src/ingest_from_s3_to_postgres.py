@@ -68,6 +68,16 @@ def extract_csv_from_s3(s3_client, bucket_name: str, file_key: str) -> pd.DataFr
 def transform_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """
     Standardize column names, select required columns, clean and type data.
+
+    Column mapping (CSV original → pipeline):
+        Channel Name               → channel_name
+        Youtuber Name              → youtuber
+        Total Subscribers          → subscribers
+        Total Videos               → total_videos
+        Engagement Score           → engagement_score
+        Content Value Index        → content_value_index
+        Metaverse Integration Level → metaverse_integration_level
+        Neural Interface Compatible → neural_interface_compatible
     """
     logging.info("Transforming DataFrame...")
 
@@ -75,22 +85,35 @@ def transform_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 
     df.columns = [col.strip().lower().replace(" ", "_") for col in df.columns]
 
-    expected_columns = ["youtuber", "subscribers", "video_views", "category", "country"]
-    missing_columns = [col for col in expected_columns if col not in df.columns]
+    column_mapping = {
+        "channel_name": "channel_name",
+        "youtuber_name": "youtuber",
+        "total_subscribers": "subscribers",
+        "total_videos": "total_videos",
+        "engagement_score": "engagement_score",
+        "content_value_index": "content_value_index",
+        "metaverse_integration_level": "metaverse_integration_level",
+        "neural_interface_compatible": "neural_interface_compatible",
+    }
 
-    if missing_columns:
+    missing_source = [src for src in column_mapping if src not in df.columns]
+    if missing_source:
         raise ValueError(
-            f"Missing expected columns in CSV: {', '.join(missing_columns)}"
+            f"Missing expected columns in CSV: {', '.join(missing_source)}"
         )
 
-    df = df[expected_columns]
+    df = df.rename(columns=column_mapping)
+    selected_columns = list(column_mapping.values())
+    df = df[selected_columns]
 
+    df["channel_name"] = df["channel_name"].astype(str).str.strip()
     df["youtuber"] = df["youtuber"].astype(str).str.strip()
-    df["category"] = df["category"].astype(str).str.strip()
-    df["country"] = df["country"].astype(str).str.strip()
+    df["metaverse_integration_level"] = df["metaverse_integration_level"].astype(str).str.strip()
+    df["neural_interface_compatible"] = df["neural_interface_compatible"].astype(str).str.strip()
 
-    df["subscribers"] = pd.to_numeric(df["subscribers"], errors="coerce").fillna(0).astype("int64")
-    df["video_views"] = pd.to_numeric(df["video_views"], errors="coerce").fillna(0).astype("int64")
+    numeric_columns = ["subscribers", "total_videos", "engagement_score", "content_value_index"]
+    for col in numeric_columns:
+        df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0).astype("int64")
 
     df = df.drop_duplicates()
 
@@ -120,11 +143,14 @@ def create_table(cursor) -> None:
     """
     create_table_query = """
     CREATE TABLE IF NOT EXISTS youtube_2025_dataset (
+        channel_name TEXT,
         youtuber TEXT,
         subscribers BIGINT,
-        video_views BIGINT,
-        category TEXT,
-        country TEXT
+        total_videos BIGINT,
+        engagement_score BIGINT,
+        content_value_index BIGINT,
+        metaverse_integration_level TEXT,
+        neural_interface_compatible TEXT
     );
     """
     cursor.execute(create_table_query)
@@ -149,11 +175,14 @@ def load_dataframe_to_postgres(df: pd.DataFrame, cursor) -> None:
 
     copy_query = """
     COPY youtube_2025_dataset (
+        channel_name,
         youtuber,
         subscribers,
-        video_views,
-        category,
-        country
+        total_videos,
+        engagement_score,
+        content_value_index,
+        metaverse_integration_level,
+        neural_interface_compatible
     )
     FROM STDIN WITH (FORMAT CSV)
     """

@@ -174,7 +174,9 @@ def monitor_negative_values_in_raw_table():
                 SELECT COUNT(*)
                 FROM youtube_2025_dataset
                 WHERE subscribers < 0
-                   OR video_views < 0;
+                   OR total_videos < 0
+                   OR engagement_score < 0
+                   OR content_value_index < 0;
                 """
             )
             invalid_count = cursor.fetchone()[0]
@@ -182,7 +184,7 @@ def monitor_negative_values_in_raw_table():
             if invalid_count > 0:
                 raise AirflowException(
                     f"Monitoring check failed: found {invalid_count} rows with negative values "
-                    f"in 'subscribers' or 'video_views'."
+                    f"in numeric columns."
                 )
 
             print("Monitoring check passed: no negative values found in raw numeric columns.")

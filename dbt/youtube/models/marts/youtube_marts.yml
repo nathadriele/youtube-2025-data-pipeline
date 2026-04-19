@@ -2,96 +2,105 @@ version: 2
 
 models:
   - name: youtube_summary
-    description: "Aggregated summary of YouTube creators by category and country."
+    description: "Aggregated summary of YouTube creators by metaverse integration level and neural interface compatibility."
     columns:
-      - name: category
-        description: "Category of the YouTube creator."
+      - name: metaverse_integration_level
+        description: "Level of metaverse integration of the YouTube channel."
         tests:
           - not_null
 
-      - name: country
-        description: "Country of the YouTube creator."
+      - name: neural_interface_compatible
+        description: "Whether the channel content is neural interface compatible."
         tests:
           - not_null
 
       - name: total_creators
-        description: "Total number of creators in each category-country combination."
+        description: "Total number of creators in each metaverse-neural combination."
         tests:
           - not_null
 
       - name: avg_subscribers
-        description: "Average number of subscribers per category-country combination."
+        description: "Average number of subscribers per metaverse-neural combination."
 
-      - name: avg_views
-        description: "Average number of video views per category-country combination."
+      - name: avg_engagement_score
+        description: "Average engagement score per metaverse-neural combination."
 
   - name: youtube_category_summary
-    description: "Aggregated summary of YouTube creators by category."
+    description: "Aggregated summary of YouTube creators by metaverse integration level."
     columns:
-      - name: category
-        description: "Category of the YouTube creator."
+      - name: metaverse_integration_level
+        description: "Level of metaverse integration of the YouTube channel."
         tests:
           - not_null
           - unique
 
       - name: total_creators
-        description: "Total number of creators in each category."
+        description: "Total number of creators per metaverse integration level."
         tests:
           - not_null
 
       - name: avg_subscribers
-        description: "Average number of subscribers by category."
+        description: "Average number of subscribers by metaverse integration level."
 
-      - name: avg_views
-        description: "Average number of video views by category."
+      - name: avg_engagement_score
+        description: "Average engagement score by metaverse integration level."
+
+      - name: avg_content_value_index
+        description: "Average content value index by metaverse integration level."
 
       - name: max_subscribers
-        description: "Maximum number of subscribers found in the category."
+        description: "Maximum number of subscribers found in the level."
 
-      - name: max_views
-        description: "Maximum number of video views found in the category."
+      - name: max_engagement_score
+        description: "Maximum engagement score found in the level."
 
-  - name: youtube_country_summary
-    description: "Aggregated summary of YouTube creators by country."
+  - name: youtube_neural_summary
+    description: "Aggregated summary of YouTube creators by neural interface compatibility."
     columns:
-      - name: country
-        description: "Country of the YouTube creator."
+      - name: neural_interface_compatible
+        description: "Whether the channel content is neural interface compatible."
         tests:
           - not_null
           - unique
 
       - name: total_creators
-        description: "Total number of creators in each country."
+        description: "Total number of creators per neural interface status."
         tests:
           - not_null
 
       - name: avg_subscribers
-        description: "Average number of subscribers by country."
+        description: "Average number of subscribers by neural interface status."
 
-      - name: avg_views
-        description: "Average number of video views by country."
+      - name: avg_engagement_score
+        description: "Average engagement score by neural interface status."
+
+      - name: avg_content_value_index
+        description: "Average content value index by neural interface status."
 
       - name: max_subscribers
-        description: "Maximum number of subscribers found in the country."
+        description: "Maximum number of subscribers found in the group."
 
-      - name: max_views
-        description: "Maximum number of video views found in the country."
+      - name: max_engagement_score
+        description: "Maximum engagement score found in the group."
 
   - name: youtube_top_creators
-    description: "Detailed ranking of YouTube creators ordered by subscribers and video views."
+    description: "Detailed ranking of YouTube creators ordered by subscribers and engagement score."
     columns:
       - name: youtuber
         description: "Name of the YouTube creator."
         tests:
           - not_null
 
-      - name: category
-        description: "Category of the YouTube creator."
+      - name: channel_name
+        description: "Name of the YouTube channel."
+
+      - name: metaverse_integration_level
+        description: "Level of metaverse integration."
         tests:
           - not_null
 
-      - name: country
-        description: "Country of the YouTube creator."
+      - name: neural_interface_compatible
+        description: "Whether the channel is neural interface compatible."
         tests:
           - not_null
 
@@ -100,7 +109,13 @@ models:
         tests:
           - not_null
 
-      - name: video_views
-        description: "Number of video views of the creator."
+      - name: total_videos
+        description: "Total number of videos published."
+
+      - name: engagement_score
+        description: "Engagement score of the creator."
         tests:
           - not_null
+
+      - name: content_value_index
+        description: "Content value index of the creator."

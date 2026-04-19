@@ -97,7 +97,7 @@ def check_raw_required_columns_not_null():
                     COUNT(*) AS total_rows,
                     COUNT(youtuber) AS youtuber_not_null,
                     COUNT(subscribers) AS subscribers_not_null,
-                    COUNT(video_views) AS video_views_not_null
+                    COUNT(engagement_score) AS engagement_score_not_null
                 FROM youtube_2025_dataset;
                 """
             )
@@ -106,7 +106,7 @@ def check_raw_required_columns_not_null():
             total_rows = result[0]
             youtuber_not_null = result[1]
             subscribers_not_null = result[2]
-            video_views_not_null = result[3]
+            engagement_score_not_null = result[3]
 
             if total_rows <= 0:
                 raise AirflowException(
@@ -123,9 +123,9 @@ def check_raw_required_columns_not_null():
                     "Data quality check failed: column 'subscribers' is fully null."
                 )
 
-            if video_views_not_null == 0:
+            if engagement_score_not_null == 0:
                 raise AirflowException(
-                    "Data quality check failed: column 'video_views' is fully null."
+                    "Data quality check failed: column 'engagement_score' is fully null."
                 )
 
             print("Raw required columns null-check passed.")

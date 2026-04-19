@@ -2,25 +2,25 @@ version: 2
 
 models:
   - name: youtube_summary
-    description: "Summary table with aggregated YouTube metrics by category and country."
+    description: "Summary table with aggregated YouTube metrics by metaverse integration level and neural interface compatibility."
     columns:
-      - name: category
-        description: "Content category of the YouTube creator."
+      - name: metaverse_integration_level
+        description: "Level of metaverse integration of the YouTube channel."
         tests:
           - not_null
 
-      - name: country
-        description: "Country associated with the YouTube creator."
+      - name: neural_interface_compatible
+        description: "Whether the channel content is neural interface compatible."
         tests:
           - not_null
 
       - name: total_creators
-        description: "Total number of creators in the category-country group."
+        description: "Total number of creators in each metaverse-neural combination."
         tests:
           - not_null
 
       - name: avg_subscribers
-        description: "Average number of subscribers in the category-country group."
+        description: "Average number of subscribers per metaverse-neural combination."
 
-      - name: avg_views
-        description: "Average number of video views in the category-country group."
+      - name: avg_engagement_score
+        description: "Average engagement score per metaverse-neural combination."

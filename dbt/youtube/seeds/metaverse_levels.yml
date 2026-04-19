@@ -1,0 +1,15 @@
+version: 2
+
+seeds:
+  - name: metaverse_levels
+    description: "Reference table mapping metaverse integration levels to human-readable descriptions and sort order."
+    columns:
+      - name: metaverse_integration_level
+        description: "Metaverse integration level identifier."
+        tests:
+          - not_null
+          - unique
+      - name: description
+        description: "Human-readable description of the integration level."
+      - name: sort_order
+        description: "Numeric sort order for the level (1 = highest integration)."

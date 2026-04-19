@@ -2,11 +2,21 @@ version: 2
 
 models:
   - name: stg_youtube_data
-    description: "Standardized and cleaned raw YouTube data"
+    description: "Standardized and cleaned raw YouTube data with channel metrics and technology integration levels."
     columns:
+      - name: channel_name
+        tests: [not_null]
       - name: youtuber
         tests: [not_null]
       - name: subscribers
         tests: [not_null]
-      - name: video_views
+      - name: total_videos
+        tests: [not_null]
+      - name: engagement_score
+        tests: [not_null]
+      - name: content_value_index
+        tests: [not_null]
+      - name: metaverse_integration_level
+        tests: [not_null]
+      - name: neural_interface_compatible
         tests: [not_null]
