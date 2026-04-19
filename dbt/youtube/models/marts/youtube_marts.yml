@@ -1,0 +1,106 @@
+version: 2
+
+models:
+  - name: youtube_summary
+    description: "Aggregated summary of YouTube creators by category and country."
+    columns:
+      - name: category
+        description: "Category of the YouTube creator."
+        tests:
+          - not_null
+
+      - name: country
+        description: "Country of the YouTube creator."
+        tests:
+          - not_null
+
+      - name: total_creators
+        description: "Total number of creators in each category-country combination."
+        tests:
+          - not_null
+
+      - name: avg_subscribers
+        description: "Average number of subscribers per category-country combination."
+
+      - name: avg_views
+        description: "Average number of video views per category-country combination."
+
+  - name: youtube_category_summary
+    description: "Aggregated summary of YouTube creators by category."
+    columns:
+      - name: category
+        description: "Category of the YouTube creator."
+        tests:
+          - not_null
+          - unique
+
+      - name: total_creators
+        description: "Total number of creators in each category."
+        tests:
+          - not_null
+
+      - name: avg_subscribers
+        description: "Average number of subscribers by category."
+
+      - name: avg_views
+        description: "Average number of video views by category."
+
+      - name: max_subscribers
+        description: "Maximum number of subscribers found in the category."
+
+      - name: max_views
+        description: "Maximum number of video views found in the category."
+
+  - name: youtube_country_summary
+    description: "Aggregated summary of YouTube creators by country."
+    columns:
+      - name: country
+        description: "Country of the YouTube creator."
+        tests:
+          - not_null
+          - unique
+
+      - name: total_creators
+        description: "Total number of creators in each country."
+        tests:
+          - not_null
+
+      - name: avg_subscribers
+        description: "Average number of subscribers by country."
+
+      - name: avg_views
+        description: "Average number of video views by country."
+
+      - name: max_subscribers
+        description: "Maximum number of subscribers found in the country."
+
+      - name: max_views
+        description: "Maximum number of video views found in the country."
+
+  - name: youtube_top_creators
+    description: "Detailed ranking of YouTube creators ordered by subscribers and video views."
+    columns:
+      - name: youtuber
+        description: "Name of the YouTube creator."
+        tests:
+          - not_null
+
+      - name: category
+        description: "Category of the YouTube creator."
+        tests:
+          - not_null
+
+      - name: country
+        description: "Country of the YouTube creator."
+        tests:
+          - not_null
+
+      - name: subscribers
+        description: "Number of subscribers of the creator."
+        tests:
+          - not_null
+
+      - name: video_views
+        description: "Number of video views of the creator."
+        tests:
+          - not_null
