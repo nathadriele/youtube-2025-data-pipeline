@@ -10,11 +10,11 @@ Structured according to modern Data Engineering best practices, this project ens
 
 To build a professional-grade ETL pipeline that:
 
-- ✅ Ingests raw CSV data into AWS S3 and PostgreSQL
-- ✅ Transforms and models the data using dbt
-- ✅ Automates the pipeline using Apache Airflow
-- ✅ Visualizes YouTube analytics through Metabase dashboards
-- ✅ Ensures a modular, testable, and well-documented architecture
+- Ingests raw CSV data into AWS S3 and PostgreSQL
+- Transforms and models the data using dbt
+- Automates the pipeline using Apache Airflow
+- Visualizes YouTube analytics through Metabase dashboards
+- Ensures a modular, testable, and well-documented architecture
 
 ## Tools & Technologies
 
@@ -85,19 +85,19 @@ Includes:
 
 ![metabase](https://github.com/user-attachments/assets/a466e13b-561b-40d8-8e8c-5e2f7a45574a)
 
-### 📈 Top Categories
+### Top Categories
 
 ![image](https://github.com/user-attachments/assets/8c35b152-42e0-41f2-ae81-4ee040ba81cc)
 
-### 📈 Views by Country
+### Views by Country
 
 ![image](https://github.com/user-attachments/assets/bc057502-db37-46b1-a542-9fbbe4cc98f7)
 
-### 📈 Engagement vs. Views
+### Engagement vs. Views
 
 ![image](https://github.com/user-attachments/assets/05b93b0b-8af7-4391-b7bd-a86e2093f9b7)
 
-### 📈 Views per Subscriber
+### Views per Subscriber
 
 ![image](https://github.com/user-attachments/assets/2ea4707f-63d0-4fc7-b50c-ccd2fccc0d2d)
 
