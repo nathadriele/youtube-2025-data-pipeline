@@ -1,4 +1,4 @@
-# YouTube 2025 Data Pipeline
+# YouTube Data Pipeline
 
 A modular and scalable Data Engineering project designed to ingest YouTube channel performance data, store it securely in AWS S3 and PostgreSQL, transform it through dbt, orchestrate workflows using Apache Airflow, and deliver dynamic visualizations with Metabase.
 
@@ -13,13 +13,13 @@ This project addresses the need to analyze YouTube channel performance at scale 
 - Who are the top-performing creators ranked by subscriber base and engagement?
 - What are the average content value indices across different channel categories?
 
-<<<<<<< HEAD
+
 - Ingests raw CSV data into AWS S3 and PostgreSQL
 - Transforms and models the data using dbt
 - Automates the pipeline using Apache Airflow
 - Visualizes YouTube analytics through Metabase dashboards
 - Ensures a modular, testable, and well-documented architecture
-=======
+  
 The pipeline automates the flow from raw CSV ingestion to a clean, tested dimensional model, enabling self-service analytics through Metabase dashboards.
 
 ## Dataset
@@ -36,7 +36,6 @@ The source dataset (`data/youtube_2025_dataset.csv`) contains 5,000 records of Y
 | `content_value_index` | bigint | Content value rating |
 | `metaverse_integration_level` | text | Level of metaverse integration |
 | `neural_interface_compatible` | text | Neural interface compatibility status |
->>>>>>> f483914 (tests)
 
 ## Tools & Technologies
 
@@ -99,16 +98,12 @@ Metabase reads from PostgreSQL and provides interactive visualizations:
 
 ![metabase](https://github.com/user-attachments/assets/a466e13b-561b-40d8-8e8c-5e2f7a45574a)
 
-<<<<<<< HEAD
-=======
 Key dashboard tiles:
 
->>>>>>> f483914 (tests)
 ### Top Categories
 
 ![image](https://github.com/user-attachments/assets/8c35b152-42e0-41f2-ae81-4ee040ba81cc)
 
-<<<<<<< HEAD
 ### Views by Country
 
 ![image](https://github.com/user-attachments/assets/bc057502-db37-46b1-a542-9fbbe4cc98f7)
@@ -118,7 +113,7 @@ Key dashboard tiles:
 ![image](https://github.com/user-attachments/assets/05b93b0b-8af7-4391-b7bd-a86e2093f9b7)
 
 ### Views per Subscriber
-=======
+
 ### Engagement vs. Subscribers
 
 ![image](https://github.com/user-attachments/assets/bc057502-db37-46b1-a542-9fbbe4cc98f7)
@@ -128,7 +123,6 @@ Key dashboard tiles:
 ![image](https://github.com/user-attachments/assets/05b93b0b-8af7-4391-b7bd-a86e2093f9b7)
 
 ### Subscriber Distribution
->>>>>>> f483914 (tests)
 
 ![image](https://github.com/user-attachments/assets/2ea4707f-63d0-4fc7-b50c-ccd2fccc0d2d)
 
