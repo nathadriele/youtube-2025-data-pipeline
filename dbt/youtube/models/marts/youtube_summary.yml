@@ -2,9 +2,25 @@ version: 2
 
 models:
   - name: youtube_summary
-    description: "Aggregated summary by category and country"
+    description: "Summary table with aggregated YouTube metrics by category and country."
     columns:
       - name: category
-        tests: [not_null]
+        description: "Content category of the YouTube creator."
+        tests:
+          - not_null
+
+      - name: country
+        description: "Country associated with the YouTube creator."
+        tests:
+          - not_null
+
       - name: total_creators
-        tests: [not_null]
+        description: "Total number of creators in the category-country group."
+        tests:
+          - not_null
+
+      - name: avg_subscribers
+        description: "Average number of subscribers in the category-country group."
+
+      - name: avg_views
+        description: "Average number of video views in the category-country group."

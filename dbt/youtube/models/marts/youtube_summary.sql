@@ -1,10 +1,12 @@
 {{ config(materialized='table') }}
 
 select
-    category,
-    country,
+    coalesce(category, 'Unknown') as category,
+    coalesce(country, 'Unknown') as country,
     count(*) as total_creators,
-    avg(subscribers) as avg_subscribers,
-    avg(video_views) as avg_views
+    round(avg(subscribers), 2) as avg_subscribers,
+    round(avg(video_views), 2) as avg_views
 from {{ ref('stg_youtube_data') }}
-group by category, country
+where subscribers is not null
+  and video_views is not null
+group by 1, 2

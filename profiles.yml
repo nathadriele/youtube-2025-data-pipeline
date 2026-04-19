@@ -5,7 +5,7 @@ youtube:
       type: postgres
       host: localhost
       user: postgres
-      password: your_password
+      password: yourpassword
       port: 5432
       dbname: "youtube"
       schema: public
